@@ -1,6 +1,11 @@
 package com.pluralsight.collections;
 
+import java.util.Comparator;
+import static java.util.Comparator.comparing;
+
 public class Product {
+    public static final Comparator<Product> BY_WEIGHT = comparing(Product::getWeight);
+
     private final String name;
     private final int weight;
 
