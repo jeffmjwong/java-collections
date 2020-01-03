@@ -8,6 +8,6 @@ public class ProductCatalogue implements Iterable {
     }
 
     public Iterator<Product> iterator() {
-
+        return null;
     }
 }
