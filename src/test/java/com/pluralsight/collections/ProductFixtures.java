@@ -13,6 +13,6 @@ public class ProductFixtures {
         bobs.getProducts().add(floorPanel);
 
         kates.getProducts().add(floorPanel);
-        kates.getProducts().add(door);
+        kates.getProducts().add(new Product("Wooden Door", 35));
     }
 }

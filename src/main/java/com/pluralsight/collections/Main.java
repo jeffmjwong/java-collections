@@ -7,8 +7,6 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello java collections!");
-
         final Set<Product> products = new HashSet<>();
         System.out.println(products);
         final Product glassDoor = new Product("Glass Door", 50);
