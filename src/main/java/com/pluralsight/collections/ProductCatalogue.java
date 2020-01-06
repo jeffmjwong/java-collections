@@ -3,10 +3,11 @@ package com.pluralsight.collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class ProductCatalogue implements Iterable<Product> {
-    private final Set<Product> products = new TreeSet<>(Product.BY_NAME);
+    private final SortedSet<Product> products = new TreeSet<>(Product.BY_WEIGHT);
 
     public Set<Product> getProducts() {
         return this.products;
@@ -21,10 +22,22 @@ public class ProductCatalogue implements Iterable<Product> {
     }
 
     public Set<Product> lightVanProducts() {
-        return null;
+        Product heaviestLightVanProduct = findHeaviestLightVanProduct();
+        return this.products.headSet(heaviestLightVanProduct);
     }
 
     public Set<Product> heavyVanProducts() {
-        return null;
+        Product heaviestLightVanProduct = findHeaviestLightVanProduct();
+        return this.products.tailSet(heaviestLightVanProduct);
+    }
+
+    private Product findHeaviestLightVanProduct() {
+        for (Product product : this.products) {
+            if (product.getWeight() > 20) {
+                return product;
+            }
+        }
+
+        return this.products.last();
     }
 }
