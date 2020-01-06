@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static com.pluralsight.collections.ProductFixtures.door;
 import static com.pluralsight.collections.ProductFixtures.floorPanel;
+import static com.pluralsight.collections.ProductFixtures.window;
 import static com.pluralsight.collections.ProductFixtures.bobs;
 import static com.pluralsight.collections.ProductFixtures.kates;
 
@@ -16,6 +17,6 @@ public class ProductCatalogueTest {
         catalogue.isSuppliedBy(bobs);
         catalogue.isSuppliedBy(kates);
 
-        assertThat(catalogue.getProducts(), containsInAnyOrder(door, floorPanel));
+        assertThat(catalogue.getProducts(), containsInAnyOrder(door, floorPanel, window));
     }
 }

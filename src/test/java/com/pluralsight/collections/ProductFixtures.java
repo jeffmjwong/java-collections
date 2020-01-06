@@ -11,8 +11,10 @@ public class ProductFixtures {
     static {
         bobs.getProducts().add(door);
         bobs.getProducts().add(floorPanel);
+        bobs.getProducts().add(window);
 
         kates.getProducts().add(floorPanel);
         kates.getProducts().add(new Product("Wooden Door", 35));
+        kates.getProducts().add(window);
     }
 }
