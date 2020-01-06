@@ -19,4 +19,12 @@ public class ProductCatalogue implements Iterable<Product> {
     public Iterator<Product> iterator() {
         return this.products.iterator();
     }
+
+    public Set<Product> lightVanProducts() {
+        return null;
+    }
+
+    public Set<Product> heavyVanProducts() {
+        return null;
+    }
 }

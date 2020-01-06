@@ -19,4 +19,24 @@ public class ProductCatalogueTest {
 
         assertThat(catalogue.getProducts(), containsInAnyOrder(door, floorPanel, window));
     }
+
+    @Test
+    public void shouldFindLightVanProducts() {
+        ProductCatalogue catalogue = new ProductCatalogue();
+
+        catalogue.isSuppliedBy(bobs);
+        catalogue.isSuppliedBy(kates);
+
+        assertThat(catalogue.lightVanProducts(), containsInAnyOrder(window));
+    }
+
+    @Test
+    public void shouldFindHeavyVanProducts() {
+        ProductCatalogue catalogue = new ProductCatalogue();
+
+        catalogue.isSuppliedBy(bobs);
+        catalogue.isSuppliedBy(kates);
+
+        assertThat(catalogue.heavyVanProducts(), containsInAnyOrder(door, floorPanel));
+    }
 }
