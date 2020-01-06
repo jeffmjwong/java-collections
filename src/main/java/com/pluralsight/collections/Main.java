@@ -7,16 +7,11 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        final Set<Product> products = new HashSet<>();
-        System.out.println(products);
-        final Product glassDoor = new Product("Glass Door", 50);
-        products.add(glassDoor);
-        products.add(glassDoor);
-        products.add(glassDoor);
-        products.add(glassDoor);
-        products.add(glassDoor);
-        products.add(glassDoor);
+        HelpDesk helpDesk = new HelpDesk();
 
-        System.out.println(products);
+        helpDesk.enquire(Customer.JACK, Category.PHONE);
+        helpDesk.enquire(Customer.JILL, Category.PRINTER);
+
+        helpDesk.processAllEnquiries();
     }
 }
