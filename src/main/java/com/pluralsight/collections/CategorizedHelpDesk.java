@@ -2,6 +2,7 @@ package com.pluralsight.collections;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.function.Predicate;
 
 public class CategorizedHelpDesk {
     private Queue<Enquiry> enquiries = new ArrayDeque<>();
@@ -11,24 +12,27 @@ public class CategorizedHelpDesk {
     }
 
     public void processPrinterEnquiry() {
-        final Enquiry enquiry = this.enquiries.peek();
+        final Predicate<Enquiry> predicate = enq -> enq.getCategory() == Category.PRINTER;
+        final String message = "Is it out of paper?";
 
-        if (enquiry != null && enquiry.getCategory() == Category.PRINTER) {
-            this.enquiries.remove();
-            enquiry.getCustomer().reply("Is it out of paper?");
-        } else {
-            System.out.println("No work to do, let's have some coffee!");
-        }
+        processEnquiry(predicate, message);
     }
 
     public void processGeneralEnquiry() {
+        Predicate<Enquiry> predicate = enq -> enq.getCategory() != Category.PRINTER;
+        final String message = "Have you tried turning it off and on again?";
+
+        processEnquiry(predicate, message);
+    }
+
+    private void processEnquiry(Predicate<Enquiry> predicate, String message) {
         final Enquiry enquiry = this.enquiries.peek();
 
-        if (enquiry != null && enquiry.getCategory() != Category.PRINTER) {
+        if (enquiry != null && predicate.test(enquiry)) {
             this.enquiries.remove();
-            enquiry.getCustomer().reply("Have you tried turning it off and on again?");
+            enquiry.getCustomer().reply(message);
         } else {
-            System.out.println("No work to do, let's have some coffee from general!");
+            System.out.println("No work to do, let's have some coffee!");
         }
     }
 }

@@ -15,9 +15,5 @@ public class Main {
         helpDesk.processPrinterEnquiry();
         helpDesk.processGeneralEnquiry();
         helpDesk.processPrinterEnquiry();
-        helpDesk.processGeneralEnquiry();
-        helpDesk.processGeneralEnquiry();
-        helpDesk.processPrinterEnquiry();
-        helpDesk.processGeneralEnquiry();
     }
 }
