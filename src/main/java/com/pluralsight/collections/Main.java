@@ -7,11 +7,17 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        HelpDesk helpDesk = new HelpDesk();
+        CategorizedHelpDesk helpDesk = new CategorizedHelpDesk();
 
         helpDesk.enquire(Customer.JACK, Category.PHONE);
         helpDesk.enquire(Customer.JILL, Category.PRINTER);
 
-        helpDesk.processAllEnquiries();
+        helpDesk.processPrinterEnquiry();
+        helpDesk.processGeneralEnquiry();
+        helpDesk.processPrinterEnquiry();
+        helpDesk.processGeneralEnquiry();
+        helpDesk.processGeneralEnquiry();
+        helpDesk.processPrinterEnquiry();
+        helpDesk.processGeneralEnquiry();
     }
 }
