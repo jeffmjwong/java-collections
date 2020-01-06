@@ -11,7 +11,9 @@ public class HelpDesk {
     }
 
     public void processAllEnquiries() {
-        final Enquiry enquiry = this.enquiries.remove();
-        enquiry.getCustomer().reply("Have you tried turning it off and on again?");
+        while (!this.enquiries.isEmpty()) {
+            final Enquiry enquiry = this.enquiries.remove();
+            enquiry.getCustomer().reply("Have you tried turning it off and on again?");
+        }
     }
 }
