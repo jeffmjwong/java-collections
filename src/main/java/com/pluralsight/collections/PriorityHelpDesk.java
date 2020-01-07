@@ -1,16 +1,12 @@
 package com.pluralsight.collections;
 
 import java.util.Comparator;
+import static java.util.Comparator.comparing;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class PriorityHelpDesk {
-    private static final Comparator<Enquiry> BY_CATEGORY = new Comparator<Enquiry>() {
-        @Override
-        public int compare(final Enquiry o1, final Enquiry o2) {
-            return o1.getCategory().compareTo(o2.getCategory());
-        }
-    };
+    private static final Comparator<Enquiry> BY_CATEGORY = comparing(Enquiry::getCategory);
 
     private Queue<Enquiry> enquiries = new PriorityQueue<>(BY_CATEGORY);
 
