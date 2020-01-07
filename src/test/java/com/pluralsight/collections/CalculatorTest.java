@@ -23,4 +23,10 @@ public class CalculatorTest {
         final int result = calculator.evaluate("1 - 2");
         assertEquals(-1, result);
     }
+
+    @Test
+    public void shouldHandleComplexStatements() {
+        final int result = calculator.evaluate("1 - 3 + 2 + 4");
+        assertEquals(4, result);
+    }
 }
