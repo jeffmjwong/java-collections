@@ -2,6 +2,6 @@ package com.pluralsight.collections;
 
 public class Calculator {
     public int evaluate(final String input) {
-        return 0;
+        return Integer.parseInt(input);
     }
 }
