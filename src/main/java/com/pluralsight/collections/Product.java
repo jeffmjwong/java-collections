@@ -9,9 +9,11 @@ public class Product {
     public static final Comparator<Product> BY_WEIGHT = comparing(Product::getWeight);
     public static final Comparator<Product> BY_NAME = comparing(Product::getName);
 
+    private final int id;
     private final String name;
     private final int weight;
 
+    public int getId() { return this.id; }
     public String getName() {
         return this.name;
     }
@@ -19,7 +21,8 @@ public class Product {
         return this.weight;
     }
 
-    public Product(String name, int weight) {
+    public Product(final int id, final String name, final int weight) {
+        this.id = id;
         this.name = name;
         this.weight = weight;
     }
