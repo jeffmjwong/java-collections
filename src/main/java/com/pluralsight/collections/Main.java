@@ -21,6 +21,14 @@ public class Main {
         System.out.println(idToProduct);
         System.out.println();
 
+        final Set<Map.Entry<Integer, Product>> entries = idToProduct.entrySet();
+        System.out.println(entries);
+        for (Map.Entry<Integer, Product> entry : entries) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+//            entry.setValue(ProductFixtures.door);
+        }
+        System.out.println();
+
         final Set<Integer> ids = idToProduct.keySet();
         System.out.println(ids);
 
