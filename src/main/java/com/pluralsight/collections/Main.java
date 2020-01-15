@@ -20,8 +20,9 @@ public class Main {
         idToProduct.put(2, ProductFixtures.floorPanel);
         idToProduct.put(3, ProductFixtures.window);
 
-        Product result = idToProduct.getOrDefault(10, defaultProduct);
+        Product result = idToProduct.replace(1, new Product(1, "Big door", 50));
         System.out.println(result);
+        System.out.println(idToProduct);
         System.out.println();
 
         final Set<Map.Entry<Integer, Product>> entries = idToProduct.entrySet();
