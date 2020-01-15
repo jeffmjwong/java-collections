@@ -14,11 +14,14 @@ public class Main {
     public static void main(String[] args) {
         final Map<Integer, Product> idToProduct = new HashMap<>();
 
+        final Product defaultProduct = new Product(-1, "Whatever the customer wants", 100);
+
         idToProduct.put(1, ProductFixtures.door);
         idToProduct.put(2, ProductFixtures.floorPanel);
         idToProduct.put(3, ProductFixtures.window);
 
-        System.out.println(idToProduct);
+        Product result = idToProduct.getOrDefault(10, defaultProduct);
+        System.out.println(result);
         System.out.println();
 
         final Set<Map.Entry<Integer, Product>> entries = idToProduct.entrySet();
