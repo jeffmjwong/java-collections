@@ -18,5 +18,9 @@ public class Main {
         idToProduct.put(3, ProductFixtures.window);
 
         System.out.println(idToProduct);
+        System.out.println();
+
+        final Set<Integer> keys = idToProduct.keySet();
+        System.out.println(keys);
     }
 }
