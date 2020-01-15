@@ -2,6 +2,7 @@ package com.pluralsight.collections;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,7 +21,21 @@ public class Main {
         System.out.println(idToProduct);
         System.out.println();
 
-        final Set<Integer> keys = idToProduct.keySet();
-        System.out.println(keys);
+        final Set<Integer> ids = idToProduct.keySet();
+        System.out.println(ids);
+
+        ids.remove(1);
+        System.out.println(ids);
+        System.out.println(idToProduct);
+        System.out.println();
+
+        final Collection<Product> products = idToProduct.values();
+        System.out.println(products);
+        System.out.println();
+
+        products.remove(ProductFixtures.floorPanel);
+        System.out.println(products);
+        System.out.println(idToProduct);
+        System.out.println();
     }
 }
