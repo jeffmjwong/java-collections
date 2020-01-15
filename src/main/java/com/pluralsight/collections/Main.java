@@ -20,7 +20,8 @@ public class Main {
         idToProduct.put(2, ProductFixtures.floorPanel);
         idToProduct.put(3, ProductFixtures.window);
 
-        idToProduct.replaceAll((id, oldProduct) -> new Product(id, oldProduct.getName(), oldProduct.getWeight() + 20));
+        final Product result = idToProduct.computeIfAbsent(10, id -> new Product(id, "New Product", 80));
+        System.out.println(result);
         System.out.println(idToProduct);
         System.out.println();
 
