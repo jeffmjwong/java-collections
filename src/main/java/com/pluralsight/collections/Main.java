@@ -20,9 +20,7 @@ public class Main {
         idToProduct.put(2, ProductFixtures.floorPanel);
         idToProduct.put(3, ProductFixtures.window);
 
-        final Product result = idToProduct.computeIfAbsent(10, id -> new Product(id, "New Product", 80));
-        System.out.println(result);
-        System.out.println(idToProduct);
+        idToProduct.forEach((key, value) -> System.out.println(key + " -> " + value));
         System.out.println();
 
         final Set<Map.Entry<Integer, Product>> entries = idToProduct.entrySet();
