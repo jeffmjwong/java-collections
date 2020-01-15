@@ -20,8 +20,7 @@ public class Main {
         idToProduct.put(2, ProductFixtures.floorPanel);
         idToProduct.put(3, ProductFixtures.window);
 
-        Product result = idToProduct.replace(1, new Product(1, "Big door", 50));
-        System.out.println(result);
+        idToProduct.replaceAll((id, oldProduct) -> new Product(id, oldProduct.getName(), oldProduct.getWeight() + 20));
         System.out.println(idToProduct);
         System.out.println();
 
