@@ -3,15 +3,20 @@ package com.pluralsight.collections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+        final Map<Integer, Product> idToProduct = new HashMap<>();
 
-        int r = calculator.evaluate("10 - 3 + 1 + 12");
-        System.out.println(r);
+        idToProduct.put(1, ProductFixtures.door);
+        idToProduct.put(2, ProductFixtures.floorPanel);
+        idToProduct.put(3, ProductFixtures.window);
+
+        System.out.println(idToProduct);
     }
 }
