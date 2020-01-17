@@ -15,9 +15,7 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
         final List<Product> products = new ArrayList<>();
-        products.add(ProductFixtures.door);
-        products.add(ProductFixtures.floorPanel);
-        products.add(ProductFixtures.window);
+        Collections.addAll(products, ProductFixtures.door, ProductFixtures.floorPanel, ProductFixtures.window);
 
         System.out.println(products);
         System.out.println();
