@@ -22,11 +22,11 @@ public class Main {
         System.out.println(products);
         System.out.println();
 
-        Collections.rotate(products, 1);
+        Collections.shuffle(products);
         System.out.println(products);
         System.out.println();
 
-        Collections.rotate(products, 1);
+        Collections.shuffle(products);
         System.out.println(products);
         System.out.println();
     }
