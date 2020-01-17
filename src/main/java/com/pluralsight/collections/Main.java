@@ -16,6 +16,8 @@ public class Main {
     public static void main(String[] args) {
         final List<Product> products = new ArrayList<>();
         Collections.addAll(products, ProductFixtures.door, ProductFixtures.floorPanel, ProductFixtures.window);
+        System.out.println(Collections.min(products, Product.BY_NAME));
+        System.out.println(Collections.min(products, Product.BY_WEIGHT));
 
         System.out.println(products);
         System.out.println();
