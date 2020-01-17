@@ -29,5 +29,8 @@ public class Main {
         products.sort(Product.BY_WEIGHT);
         System.out.println(products);
         System.out.println();
+
+        List<String> sg = Collections.emptyList();
+        System.out.println(sg);
     }
 }
