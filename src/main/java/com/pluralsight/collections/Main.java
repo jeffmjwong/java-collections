@@ -30,7 +30,7 @@ public class Main {
         System.out.println(products);
         System.out.println();
 
-        List<String> sg = Collections.emptyList();
+        List<String> sg = Collections.singletonList("hello");
         System.out.println(sg);
     }
 }
