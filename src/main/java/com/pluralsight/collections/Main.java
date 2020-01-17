@@ -22,11 +22,11 @@ public class Main {
         System.out.println(products);
         System.out.println();
 
-        Collections.shuffle(products);
+        products.sort(Product.BY_NAME);
         System.out.println(products);
         System.out.println();
 
-        Collections.shuffle(products);
+        products.sort(Product.BY_WEIGHT);
         System.out.println(products);
         System.out.println();
     }
